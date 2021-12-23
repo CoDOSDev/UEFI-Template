@@ -20,6 +20,7 @@ build: Bootloader/main.efi Kernel/kernel.elf
 	mcopy -i $(IMAGE) $(BOOT_IMAGE) ::/EFI/BOOT
 	mcopy -i $(IMAGE) Build/startup.nsh ::
 	mcopy -i $(IMAGE) $(KERNEL_IMAGE) ::
+	find ./Storage -name "*.*" -exec mcopy -i $(IMAGE) {} :: \;
 
 Bootloader/main.efi:Bootloader/main.c
 	$(MAKE) -C Bootloader
