@@ -18,7 +18,7 @@ build: Bootloader/main.efi Kernel/kernel.elf
 	mmd -i $(IMAGE) ::/EFI/BOOT
 
 	mcopy -i $(IMAGE) $(BOOT_IMAGE) ::/EFI/BOOT
-	mcopy -i $(IMAGE) Boot/startup.nsh ::
+	mcopy -i $(IMAGE) Build/startup.nsh ::
 	mcopy -i $(IMAGE) $(KERNEL_IMAGE) ::
 
 Bootloader/main.efi:Bootloader/main.c
