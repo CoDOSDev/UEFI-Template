@@ -6,7 +6,6 @@ build:
 
 install:
 	apt-get install gcc xorriso grub-common qemu qemu-system ovmf mtools g++ nasm
-	git clone https://git.code.sf.net/p/gnu-efi/code gnu-efi
 	$(MAKE) -C gnu-efi
 	$(MAKE) -C gnu-efi/gnuefi
 	$(MAKE) -C gnu-efi/lib
